@@ -53,6 +53,12 @@ const checkAllWebsites = () => {
 const minutes = 60;
 const interval = minutes * 60 * 1000;
 const startHelth = () => {
+  channelsApi.createMessage(channelId, {
+    content:
+      "Startup check. This will now run every " +
+      minutes +
+      " minutes. Please mute the server if you have not.",
+  });
   checkAllWebsites();
   setInterval(checkAllWebsites, interval);
 };
